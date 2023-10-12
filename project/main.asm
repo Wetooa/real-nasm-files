@@ -4,7 +4,7 @@ global _start
 section .data
 
 section .bss
-  input resb 16
+  input resb 32
 
 section .text
 _start:
@@ -12,13 +12,12 @@ _start:
   mov eax, 3
   mov ebx, 0
   mov ecx, input
-  mov edx, 16
+  mov edx, 32
   int 80h
 
-  xor eax, eax
-  lea esi, [input]
   call getLen
 
+  add eax, 1
   mov edx, eax
   mov eax, 4
   mov ebx, 1
@@ -31,14 +30,15 @@ _start:
 
 
 getLen:
-  movzx edx, byte [esi]
-  cmp edx, 0xA
-  je return 
-
-  inc esi
-  inc eax
-
-  jmp getLen
+  xor eax, eax
+  lea esi, [input]
+  getLenLoop:
+    movzx edx, byte [esi]
+    cmp edx, 0xA
+    je return 
+    inc esi
+    inc eax
+    jmp getLenLoop
 
 return:
   ret 
