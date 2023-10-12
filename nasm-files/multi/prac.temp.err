@@ -1,0 +1,15 @@
+c:\Users\L14Y16W30\Documents\Wetooa\assembly\prac.temp.asm(3) : Error A2209: Syntax error: section
+c:\Users\L14Y16W30\Documents\Wetooa\assembly\prac.temp.asm(4) : Error A2082: Must be in segment block
+c:\Users\L14Y16W30\Documents\Wetooa\assembly\prac.temp.asm(5) : Error A2082: Must be in segment block
+c:\Users\L14Y16W30\Documents\Wetooa\assembly\prac.temp.asm(7) : Error A2209: Syntax error: section
+c:\Users\L14Y16W30\Documents\Wetooa\assembly\prac.temp.asm(8) : Error A2209: Syntax error: global
+c:\Users\L14Y16W30\Documents\Wetooa\assembly\prac.temp.asm(10) : Error A2082: Must be in segment block
+c:\Users\L14Y16W30\Documents\Wetooa\assembly\prac.temp.asm(11) : Error A2082: Must be in segment block
+c:\Users\L14Y16W30\Documents\Wetooa\assembly\prac.temp.asm(12) : Error A2082: Must be in segment block
+c:\Users\L14Y16W30\Documents\Wetooa\assembly\prac.temp.asm(13) : Error A2082: Must be in segment block
+c:\Users\L14Y16W30\Documents\Wetooa\assembly\prac.temp.asm(14) : Error A2082: Must be in segment block
+c:\Users\L14Y16W30\Documents\Wetooa\assembly\prac.temp.asm(16) : Error A2082: Must be in segment block
+c:\Users\L14Y16W30\Documents\Wetooa\assembly\prac.temp.asm(17) : Error A2082: Must be in segment block
+c:\Users\L14Y16W30\Documents\Wetooa\assembly\prac.temp.asm(18) : Error A2082: Must be in segment block
+c:\Users\L14Y16W30\Documents\Wetooa\assembly\prac.temp.asm(19) : Error A2082: Must be in segment block
+c:\Users\L14Y16W30\Documents\Wetooa\assembly\prac.temp.asm(19) : Error A2099: END directive required at end of file

@@ -1,0 +1,124 @@
+section .data
+	msg1: db 'INVENTORY SYSTEM',10, 'Programmer: ADRIAN T. SAJULGA' , 10 
+	len1: equ $-msg1
+	p1: db 'Input Product 1 Quantity: '
+	p1Len: equ $-p1
+	p2: db 'Input Product 2 Quantity: '
+	p2Len: equ $-p2
+	fin: db 'Total Product Quantity: '
+    finLen: equ $-fin
+    
+    n: dd 136
+
+section .bss
+    num1 resb 3
+    num2 resb 3
+    
+    sum resb 4
+    
+
+section .text
+	global _start
+
+_start:
+    mov eax, 4          
+	mov ebx, 1            
+	mov ecx, msg1       
+	mov edx, len1     
+	int 80h            
+	
+	
+	
+	mov eax, 4
+	mov ebx, 1
+	mov ecx, p1
+	mov edx, p1Len
+	int 80h
+	
+	mov eax, 3
+	mov ebx, 0
+	mov ecx, num1
+	mov edx, 3
+	int 80h
+	
+	
+	mov eax, 4
+	mov ebx, 1
+	mov ecx, p2
+	mov edx, p2Len
+	int 80h
+	
+	mov eax, 3
+	mov ebx, 0
+	mov ecx, num2
+	mov edx, 3
+	int 80h
+	
+	xor eax, eax
+	lea esi, [num1]
+	
+    movzx edx, byte [esi]
+	sub edx, '0'
+	add eax, edx
+	
+	movzx edx, byte [esi + 1]
+	cmp edx, 10
+	je skip1
+	imul eax, 10
+	sub edx, '0'
+	add eax, edx
+	inc esi
+	skip1:
+	
+	mov ecx, eax
+	
+	xor eax, eax
+	lea esi, [num2]
+	
+    movzx edx, byte [esi]
+	sub edx, '0'
+	add eax, edx
+	
+	movzx edx, byte [esi + 1]
+	cmp edx, 10
+	je skip2
+	imul eax, 10
+	sub edx, '0'
+	add eax, edx
+	inc esi
+	skip2:
+	
+	mov ebp, esp
+	add eax, ecx
+	
+	loops:
+	    xor edx, edx
+	    mov ebx, 10
+	    div ebx
+	    
+	    add edx, '0'
+	    push edx
+	    
+	    cmp eax, 0
+	    jne loops
+	
+	
+	mov eax, 4
+	mov ebx, 1
+	mov ecx, fin
+	mov edx, finLen
+	int 80h
+	
+	mov eax, 4
+	mov ebx, 1
+	mov ecx, esp
+	mov edx, 9
+	int 80h
+    
+	
+	mov eax, 1          
+	mov ebx, 0          
+	int 80h
+	
+	
+	
