@@ -36,7 +36,9 @@ section .data
   multiplicationResLineLen: equ $-multiplicationResLine
   divisionResLine: db "Quotient is "
   divisionResLineLen: equ $-divisionResLine
-  
+
+
+
 
 section .bss
   input1 resd 16
