@@ -1,0 +1,286 @@
+global _start
+
+section .data
+  visionStatement: dd "CEBU INSTITUTE OF TECHNOLOGY - UNIVERSITY", 10, "------------------------------------------------", 10, "VISION STATEMENT", 10, "We envision to be a top Philippine university in 2025, a trusted education provider, an outcomes-based institution of research and learning, and a people-oriented organization. ", 10, 10,
+  visionStatementLen: equ $-visionStatement
+
+  missionStatement: db "------------------------------------------------", 10, "MISSION STATEMENT", 10, "CIT commits to: Guide learners to become industry-preferred and life ready professionals Empower people for knowledge generation and creativity Accelerate community development Respond proactively to a fast-changing world", 10, 10
+  missionStatementLen: equ $-missionStatement
+
+  coreValues: db "------------------------------------------------", 10, "CORE VALUES", 10, 9, "• CULTURE OF EXCELLENCE A commitment to go beyond the ordinary; steadfast in delivering data-driven, value-optimized and client-centric service", 10, 9, "• INTEGRITY Uncompromising adherence to moral and ethical principles" 10, 9, "• TEAMWORK Promoting a culture of collaboration and empowerment/ Commitment to purposeful collaboration to advocate for innovative solutions ", 10, 9, "• UNIVERSALITY Regard for the welfare of people and nature/ Respect for all and stewardship of God's creation / Promotion of common good of, by and for all", 10, 10
+  coreValuesLen: equ $-coreValues
+
+  statementOfCoreCompetency: db "------------------------------------------------", 10, "STATEMENT OF CORE COMPETENCY Science & Technology is a way of academic life among administrators, faculty, and students. In the design, administration, and implementation of curricular programs, technology is embedded, articulated, and actuated. ", 10, 10
+  statementOfCoreCompetencyLen: equ $-statementOfCoreCompetency
+
+  missionVisionGoalCCS: db "------------------------------------------------", 10, "Vision", 10, "A leading Center of Excellence in Computing Education", 10, 10, "Mission", 10, "To provide quality industry-standard computing education", 10, 10, "Goal", 10, "To produce values-driven, industry-preferred and competent computing professionals through: proficient, supportive and highly-trained faculty; appropriate facilities; programs and pedagogy responsive to the community; as well as a culture that encourages Creativity, Innovation, and Team-work ", 10, 10
+  missionVisionGoalCCSLen: equ $-missionVisionGoalCCS
+
+  BSCS: db "------------------------------------------------", 10, "Bachelor of Science in Computer Science (BSCS)", 10, "The BS Computer Science program includes the study of computing concepts and theories, algorithmic foundations and new developments in computing. The program prepares students to design and create algorithmically complex software and develop new and effective algorithms for solving computing problems." , 10, "The program also includes the study of the standards and practices in Software Engineering. It prepares students to acquire skills and disciplines required for designing, writing and modifying software components, modules and applications that comprise software solutions. ", 10, 10
+  BSCSLen: equ $-BSCS
+
+  BSIT: db "------------------------------------------------", 10, "Bachelor of Science in Information Technology (BSIT)", 10, "The BS Information Technology program includes the study of the utilization of both hardware and software technologies involving planning, installing, customizing, operating, managing and administering, and maintaining information technology infrastructure that provides computing solutions to address the needs of an organization.", 10, "The program prepares graduates to address various user needs involving the selection, development, application, integration and management of computing technologies within an organization. ", 10, 10, 10
+  BSITLen: equ $-BSIT
+
+  choice: db "#"
+  choiceLen: equ $-choice
+
+  newLine: db 10
+  newLineLen: equ $-newLine
+
+  num: dd 0
+  isNeg: dd 0
+  endingNum: dd 1000
+
+  space: db 32
+  spaceLen: equ $-space
+
+  name: db "------------------------------------------------", 10, "Programmer: ADRIAN T. SAJULGA", 10
+  nameLen: equ $-name
+
+  date: db "Date: 10/26/2023"
+  dateLen: equ $-date
+
+section .text
+_start:
+
+  mov eax, 4
+  mov ebx, 1
+  mov ecx, visionStatement
+  mov edx, visionStatementLen
+  int 80h
+
+  mov eax, 4
+  mov ebx, 1
+  mov ecx, missionStatement
+  mov edx, missionStatementLen
+  int 80h
+
+  mov eax, 4
+  mov ebx, 1
+  mov ecx, coreValues
+  mov edx, coreValuesLen
+  int 80h
+
+  mov eax, 4
+  mov ebx, 1
+  mov ecx, statementOfCoreCompetency
+  mov edx, statementOfCoreCompetencyLen
+  int 80h
+
+  mov eax, 4
+  mov ebx, 1
+  mov ecx, missionVisionGoalCCS
+  mov edx, missionVisionGoalCCSLen
+  int 80h
+
+  mov eax, 4
+  mov ebx, 1
+  mov ecx, BSCS
+  mov edx, BSCSLen
+  int 80h
+
+  mov eax, 4
+  mov ebx, 1
+  mov ecx, BSIT
+  mov edx, BSITLen
+  int 80h
+
+  ; DISPLAYING CITU
+  push dword [endingNum]
+
+  ; U
+  push 0
+  push 0
+  push 0
+  push 14
+  push 0
+  push 14
+  push 0
+  push 4
+  push -3
+  push 4
+  push 0
+  push 4
+  push -3
+  push 4
+  push 0
+  push 4
+  push -3
+  push 4
+  push 0
+  push 4
+  push -3
+  push 4
+  push 0
+  push 4
+  push -3
+  push 4
+  push 0
+  push 4
+  push -3
+  push 4
+  push 0
+  push 4
+  push -3
+  push 4
+  push 0
+  push 4
+  push -3
+  push 4
+
+  ; T
+  push 0
+  push 0
+  push 4
+  push -2
+  push 0
+  push 4
+  push -2
+  push 0
+  push 4
+  push -2
+  push 0
+  push 4
+  push -2
+  push 0
+  push 4
+  push -2
+  push 0
+  push 4
+  push -2
+  push 0
+  push 4
+  push -2
+  push 0
+  push 4
+  push -2
+  push 0
+  push 14
+  push 0
+  push 14
+
+
+  ; I
+  push 0
+  push 0
+  push 14
+  push 0
+  push 14
+  push 0
+  push 4
+  push -2
+  push 0
+  push 4
+  push -2
+  push 0
+  push 4
+  push -2
+  push 0
+  push 4
+  push -2
+  push 0
+  push 4
+  push -2
+  push 0
+  push 14
+  push 0
+  push 14
+
+  ; C
+  push 0
+  push 0
+  push 14
+  push 0
+  push 14
+  push 0
+  push 4
+  push 0
+  push 4
+  push 0
+  push 4
+  push 0
+  push 4
+  push 0
+  push 4
+  push 0
+  push 4
+  push 0
+  push 14
+  push 0
+  push 14
+
+
+  loop1:
+    pop eax
+    cmp eax, dword [endingNum]
+    je endLoop1
+
+    cmp eax, 0
+    jne notNewLine
+    mov eax, 4
+    mov ebx, 1
+    mov ecx, newLine
+    mov edx, newLineLen
+    int 80h
+    jmp loop1
+    notNewLine:
+
+    cmp eax, 0
+    jg negCheckerEnd
+    mov ebx, 1
+    mov dword [isNeg], ebx
+    mov ebx, -2
+    imul ebx
+    negCheckerEnd:
+    
+    mov dword [num], eax
+
+    loop2:
+      mov eax, dword [num]
+      cmp eax, 0
+      je endLoop2
+      dec eax
+      mov dword [num], eax
+
+      mov ebx, dword [isNeg]
+      cmp ebx, 1
+      je printspace
+
+      mov eax, 4
+      mov ebx, 1
+      mov ecx, choice
+      mov edx, choiceLen
+      int 80h
+      jmp loop2
+
+      printspace:
+      mov eax, 4
+      mov ebx, 1
+      mov ecx, space
+      mov edx, spaceLen
+      int 80h
+      jmp loop2
+    endLoop2:
+
+  xor ebx, ebx
+  mov dword [isNeg], ebx
+  jmp loop1
+  endLoop1:
+
+  mov eax, 4
+  mov ebx, 1
+  mov ecx, name
+  mov edx, nameLen
+  int 80h
+
+  mov eax, 4
+  mov ebx, 1
+  mov ecx, date
+  mov edx, dateLen
+  int 80h
+
+  mov eax, 1
+  mov ebx, 0
+  int 80h
+
