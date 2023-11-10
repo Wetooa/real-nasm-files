@@ -1,138 +1,128 @@
 
 section .data
   ; HEADER
-  header: db "Cebu Institute of Technology - University", 10, "College of Computer Studies", 10, "College Library", 10, "First Semester Academic Year 2023-2024", 10, 10, "ENTER GROCERY STOCKS"
+  header: db "Cebu Institute of Technology - University", 10, "College of Computer Studies", 10, "College Library", 10, "First Semester Academic Year 2023-2024", 10, 10, "ENTER GROCERY LIST", 10
   headerLen: equ $-header
 
   ; INITIALIZE LABELS
-  lblId: db "Product ID No: "
-  lblIdLen: equ $-lblId
-  lblProductName: db "Product Name: "
-  lblProductNameLen: equ $-lblProductName
-  lblManufacturer: db "Product Manufacturer: "
+  lblName: db "Product Name: "
+  lblNameLen: equ $-lblName
+  lblManufacturer: db 10, "Product Manufacturer No: "
   lblManufacturerLen: equ $-lblManufacturer
-  lblDescription: db "Description: "
+  lblDescription: db 10, "Product Description: "
   lblDescriptionLen: equ $-lblDescription
-  lblUnitPrice: db "Unit Price: "
+  lblUnitPrice: db 10, "Product Unit Price: "
   lblUnitPriceLen: equ $-lblUnitPrice
-  lblQuantity: db "Quantity: "
+  lblQuantity: db 10, "Product Quantity: "
   lblQuantityLen: equ $-lblQuantity
 
   ; INITIALIZE PRODUCT 1
-  prdNo1Lbl: db " ", 10, "", 10, "Product No. 1", 10
+  prdNo1Lbl: db 10, "----------", 10, "Product No. 1", 10
   prdNo1LblLen: equ $-prdNo1Lbl
 
   ; INITIALIZE PRODUCT 2
-  prdNo2Lbl: db " ", 10, "", 10, "Product No. 2", 10
+  prdNo2Lbl: db 10, "----------", 10, "Product No. 2", 10
   prdNo2LblLen: equ $-prdNo2Lbl
 
   ; INITIALIZE PRODUCT 3
-  prdNo3Lbl: db " ", 10, "", 10, "Product No. 3", 10
+  prdNo3Lbl: db 10, "----------", 10, "Product No. 3", 10
   prdNo3LblLen: equ $-prdNo3Lbl
 
   ; INITIALIZE PRODUCT 4
-  prdNo4Lbl: db " ", 10, "", 10, "Product No. 4", 10
+  prdNo4Lbl: db 10, "----------", 10, "Product No. 4", 10
   prdNo4LblLen: equ $-prdNo4Lbl
 
   ; INITIALIZE PRODUCT 5
-  prdNo5Lbl: db " ", 10, "", 10, "Product No. 5", 10
+  prdNo5Lbl: db 10, "----------", 10, "Product No. 5", 10
   prdNo5LblLen: equ $-prdNo5Lbl
 
   ; INITIALIZE PRODUCT 6
-  prdNo6Lbl: db " ", 10, "", 10, "Product No. 6", 10
+  prdNo6Lbl: db 10, "----------", 10, "Product No. 6", 10
   prdNo6LblLen: equ $-prdNo6Lbl
 
   ; INITIALIZE PRODUCT 7
-  prdNo7Lbl: db " ", 10, "", 10, "Product No. 7", 10
+  prdNo7Lbl: db 10, "----------", 10, "Product No. 7", 10
   prdNo7LblLen: equ $-prdNo7Lbl
- 
+
   ; INITIALIZE PRODUCT 8
-  prdNo8Lbl: db " ", 10, "", 10, "Product No. 8", 10
+  prdNo8Lbl: db 10, "----------", 10, "Product No. 8", 10
   prdNo8LblLen: equ $-prdNo8Lbl
 
   ; INITIALIZE PRODUCT 9
-  prdNo9Lbl: db " ", 10, "", 10, "Product No. 9", 10
+  prdNo9Lbl: db 10, "----------", 10, "Product No. 9", 10
   prdNo9LblLen: equ $-prdNo9Lbl
 
   ; INITIALIZE PRODUCT 10
-  prdNo10Lbl: db " ", 10, "", 10, "Product No. 10", 10
+  prdNo10Lbl: db 10, "----------", 10, "Product No. 10", 10
   prdNo10LblLen: equ $-prdNo10Lbl
 
-
   ; FOOTER
-
-  ; add thank you message or whatever
-
-  lblProgrammerName: db " ", 10, "", 10, "Programmer Name: "
+  displayMessage: db "", 10, "---------------", 10, "DISPLAYING PRODUCT", 10, 10
+  displayMessageLen: equ $-displayMessage
+  endingMessage: db "", 10, "---------------", 10, "Thank you for using this program!", 10, 10
+  endingMessageLen: equ $-endingMessage
+  lblProgrammerName: db "Programmer Name: "
   lblProgrammerNameLen: equ $-lblProgrammerName
   programmerName: db "Adrian Sajulga", 10
   programmerNameLen: equ $-programmerName
   lblDate: db "Date: "  
   lblDateLen: equ $-lblDate
-  date: db "10-5-2023"
+  date: db "Sat Oct 21 2023"
   dateLen: equ $-date
 
+
 section .bss
-  prdNo1Id: resb 32
-  prdNo1ProductName: resb 32
+  prdNo1Name: resb 32
   prdNo1Manufacturer: resb 32
   prdNo1Description: resb 32
   prdNo1UnitPrice: resb 32
   prdNo1Quantity: resb 32
-  prdNo2Id: resb 32
-  prdNo2ProductName: resb 32
+  prdNo2Name: resb 32
   prdNo2Manufacturer: resb 32
   prdNo2Description: resb 32
   prdNo2UnitPrice: resb 32
   prdNo2Quantity: resb 32
-  prdNo3Id: resb 32
-  prdNo3ProductName: resb 32
+  prdNo3Name: resb 32
   prdNo3Manufacturer: resb 32
   prdNo3Description: resb 32
   prdNo3UnitPrice: resb 32
   prdNo3Quantity: resb 32
-  prdNo4Id: resb 32
-  prdNo4ProductName: resb 32
+  prdNo4Name: resb 32
   prdNo4Manufacturer: resb 32
   prdNo4Description: resb 32
   prdNo4UnitPrice: resb 32
   prdNo4Quantity: resb 32
-  prdNo5Id: resb 32
-  prdNo5ProductName: resb 32
+  prdNo5Name: resb 32
   prdNo5Manufacturer: resb 32
   prdNo5Description: resb 32
   prdNo5UnitPrice: resb 32
   prdNo5Quantity: resb 32
-  prdNo6Id: resb 32
-  prdNo6ProductName: resb 32
+  prdNo6Name: resb 32
   prdNo6Manufacturer: resb 32
   prdNo6Description: resb 32
   prdNo6UnitPrice: resb 32
   prdNo6Quantity: resb 32
-  prdNo7Id: resb 32
-  prdNo7ProductName: resb 32
+  prdNo7Name: resb 32
   prdNo7Manufacturer: resb 32
   prdNo7Description: resb 32
   prdNo7UnitPrice: resb 32
   prdNo7Quantity: resb 32
-  prdNo8Id: resb 32
-  prdNo8ProductName: resb 32
+  prdNo8Name: resb 32
   prdNo8Manufacturer: resb 32
   prdNo8Description: resb 32
   prdNo8UnitPrice: resb 32
   prdNo8Quantity: resb 32
-  prdNo9Id: resb 32
-  prdNo9ProductName: resb 32
+  prdNo9Name: resb 32
   prdNo9Manufacturer: resb 32
   prdNo9Description: resb 32
   prdNo9UnitPrice: resb 32
   prdNo9Quantity: resb 32
-  prdNo10Id: resb 32
-  prdNo10ProductName: resb 32
+  prdNo10Name: resb 32
   prdNo10Manufacturer: resb 32
   prdNo10Description: resb 32
   prdNo10UnitPrice: resb 32
   prdNo10Quantity: resb 32
+
 
 section .text
   global _start  
@@ -152,22 +142,12 @@ _start:
   int 80h
   mov eax, 4
   mov ebx, 1
-  mov ecx, lblId
-  mov edx, lblIdLen
+  mov ecx, lblName
+  mov edx, lblNameLen
   int 80h
   mov eax, 3
   mov ebx, 0
-  mov ecx, prdNo1Id
-  mov edx, 32
-  int 80h
-  mov eax, 4
-  mov ebx, 1
-  mov ecx, lblProductName
-  mov edx, lblProductNameLen
-  int 80h
-  mov eax, 3
-  mov ebx, 0
-  mov ecx, prdNo1ProductName
+  mov ecx, prdNo1Name
   mov edx, 32
   int 80h
   mov eax, 4
@@ -215,26 +195,16 @@ _start:
   mov eax, 4
   mov ebx, 1
   mov ecx, prdNo2Lbl
-  mov edx, prdNo1LblLen
+  mov edx, prdNo2LblLen
   int 80h
   mov eax, 4
   mov ebx, 1
-  mov ecx, lblId
-  mov edx, lblIdLen
+  mov ecx, lblName
+  mov edx, lblNameLen
   int 80h
   mov eax, 3
   mov ebx, 0
-  mov ecx, prdNo2Id
-  mov edx, 32
-  int 80h
-  mov eax, 4
-  mov ebx, 1
-  mov ecx, lblProductName
-  mov edx, lblProductNameLen
-  int 80h
-  mov eax, 3
-  mov ebx, 0
-  mov ecx, prdNo2ProductName
+  mov ecx, prdNo2Name
   mov edx, 32
   int 80h
   mov eax, 4
@@ -286,22 +256,12 @@ _start:
   int 80h
   mov eax, 4
   mov ebx, 1
-  mov ecx, lblId
-  mov edx, lblIdLen
+  mov ecx, lblName
+  mov edx, lblNameLen
   int 80h
   mov eax, 3
   mov ebx, 0
-  mov ecx, prdNo3Id
-  mov edx, 32
-  int 80h
-  mov eax, 4
-  mov ebx, 1
-  mov ecx, lblProductName
-  mov edx, lblProductNameLen
-  int 80h
-  mov eax, 3
-  mov ebx, 0
-  mov ecx, prdNo3ProductName
+  mov ecx, prdNo3Name
   mov edx, 32
   int 80h
   mov eax, 4
@@ -353,22 +313,12 @@ _start:
   int 80h
   mov eax, 4
   mov ebx, 1
-  mov ecx, lblId
-  mov edx, lblIdLen
+  mov ecx, lblName
+  mov edx, lblNameLen
   int 80h
   mov eax, 3
   mov ebx, 0
-  mov ecx, prdNo4Id
-  mov edx, 32
-  int 80h
-  mov eax, 4
-  mov ebx, 1
-  mov ecx, lblProductName
-  mov edx, lblProductNameLen
-  int 80h
-  mov eax, 3
-  mov ebx, 0
-  mov ecx, prdNo4ProductName
+  mov ecx, prdNo4Name
   mov edx, 32
   int 80h
   mov eax, 4
@@ -412,7 +362,7 @@ _start:
   mov edx, 32
   int 80h
 
-  ; GET PRODUCT 5 
+  ; GET PRODUCT 5
   mov eax, 4
   mov ebx, 1
   mov ecx, prdNo5Lbl
@@ -420,22 +370,12 @@ _start:
   int 80h
   mov eax, 4
   mov ebx, 1
-  mov ecx, lblId
-  mov edx, lblIdLen
+  mov ecx, lblName
+  mov edx, lblNameLen
   int 80h
   mov eax, 3
   mov ebx, 0
-  mov ecx, prdNo5Id
-  mov edx, 32
-  int 80h
-  mov eax, 4
-  mov ebx, 1
-  mov ecx, lblProductName
-  mov edx, lblProductNameLen
-  int 80h
-  mov eax, 3
-  mov ebx, 0
-  mov ecx, prdNo5ProductName
+  mov ecx, prdNo5Name
   mov edx, 32
   int 80h
   mov eax, 4
@@ -487,22 +427,12 @@ _start:
   int 80h
   mov eax, 4
   mov ebx, 1
-  mov ecx, lblId
-  mov edx, lblIdLen
+  mov ecx, lblName
+  mov edx, lblNameLen
   int 80h
   mov eax, 3
   mov ebx, 0
-  mov ecx, prdNo6Id
-  mov edx, 32
-  int 80h
-  mov eax, 4
-  mov ebx, 1
-  mov ecx, lblProductName
-  mov edx, lblProductNameLen
-  int 80h
-  mov eax, 3
-  mov ebx, 0
-  mov ecx, prdNo6ProductName
+  mov ecx, prdNo6Name
   mov edx, 32
   int 80h
   mov eax, 4
@@ -554,22 +484,12 @@ _start:
   int 80h
   mov eax, 4
   mov ebx, 1
-  mov ecx, lblId
-  mov edx, lblIdLen
+  mov ecx, lblName
+  mov edx, lblNameLen
   int 80h
   mov eax, 3
   mov ebx, 0
-  mov ecx, prdNo7Id
-  mov edx, 32
-  int 80h
-  mov eax, 4
-  mov ebx, 1
-  mov ecx, lblProductName
-  mov edx, lblProductNameLen
-  int 80h
-  mov eax, 3
-  mov ebx, 0
-  mov ecx, prdNo7ProductName
+  mov ecx, prdNo7Name
   mov edx, 32
   int 80h
   mov eax, 4
@@ -621,22 +541,12 @@ _start:
   int 80h
   mov eax, 4
   mov ebx, 1
-  mov ecx, lblId
-  mov edx, lblIdLen
+  mov ecx, lblName
+  mov edx, lblNameLen
   int 80h
   mov eax, 3
   mov ebx, 0
-  mov ecx, prdNo8Id
-  mov edx, 32
-  int 80h
-  mov eax, 4
-  mov ebx, 1
-  mov ecx, lblProductName
-  mov edx, lblProductNameLen
-  int 80h
-  mov eax, 3
-  mov ebx, 0
-  mov ecx, prdNo8ProductName
+  mov ecx, prdNo8Name
   mov edx, 32
   int 80h
   mov eax, 4
@@ -688,22 +598,12 @@ _start:
   int 80h
   mov eax, 4
   mov ebx, 1
-  mov ecx, lblId
-  mov edx, lblIdLen
+  mov ecx, lblName
+  mov edx, lblNameLen
   int 80h
   mov eax, 3
   mov ebx, 0
-  mov ecx, prdNo9Id
-  mov edx, 32
-  int 80h
-  mov eax, 4
-  mov ebx, 1
-  mov ecx, lblProductName
-  mov edx, lblProductNameLen
-  int 80h
-  mov eax, 3
-  mov ebx, 0
-  mov ecx, prdNo9ProductName
+  mov ecx, prdNo9Name
   mov edx, 32
   int 80h
   mov eax, 4
@@ -755,22 +655,12 @@ _start:
   int 80h
   mov eax, 4
   mov ebx, 1
-  mov ecx, lblId
-  mov edx, lblIdLen
+  mov ecx, lblName
+  mov edx, lblNameLen
   int 80h
   mov eax, 3
   mov ebx, 0
-  mov ecx, prdNo10Id
-  mov edx, 32
-  int 80h
-  mov eax, 4
-  mov ebx, 1
-  mov ecx, lblProductName
-  mov edx, lblProductNameLen
-  int 80h
-  mov eax, 3
-  mov ebx, 0
-  mov ecx, prdNo10ProductName
+  mov ecx, prdNo10Name
   mov edx, 32
   int 80h
   mov eax, 4
@@ -815,6 +705,13 @@ _start:
   int 80h
 
 
+  ; DISPLAY
+  mov eax, 4
+  mov ebx, 1
+  mov ecx, displayMessage
+  mov edx, displayMessageLen
+  int 80h
+
   ; DISPLAY PRODUCT 1
   mov eax, 4
   mov ebx, 1
@@ -823,22 +720,12 @@ _start:
   int 80h
   mov eax, 4
   mov ebx, 1
-  mov ecx, lblId
-  mov edx, lblIdLen
+  mov ecx, lblName
+  mov edx, lblNameLen
   int 80h
   mov eax, 4
   mov ebx, 1
-  mov ecx, prdNo1Id
-  mov edx, 32
-  int 80h
-  mov eax, 4
-  mov ebx, 1
-  mov ecx, lblProductName
-  mov edx, lblProductNameLen
-  int 80h
-  mov eax, 4
-  mov ebx, 1
-  mov ecx, prdNo1ProductName
+  mov ecx, prdNo1Name
   mov edx, 32
   int 80h
   mov eax, 4
@@ -890,22 +777,12 @@ _start:
   int 80h
   mov eax, 4
   mov ebx, 1
-  mov ecx, lblId
-  mov edx, lblIdLen
+  mov ecx, lblName
+  mov edx, lblNameLen
   int 80h
   mov eax, 4
   mov ebx, 1
-  mov ecx, prdNo2Id
-  mov edx, 32
-  int 80h
-  mov eax, 4
-  mov ebx, 1
-  mov ecx, lblProductName
-  mov edx, lblProductNameLen
-  int 80h
-  mov eax, 4
-  mov ebx, 1
-  mov ecx, prdNo2ProductName
+  mov ecx, prdNo2Name
   mov edx, 32
   int 80h
   mov eax, 4
@@ -957,22 +834,12 @@ _start:
   int 80h
   mov eax, 4
   mov ebx, 1
-  mov ecx, lblId
-  mov edx, lblIdLen
+  mov ecx, lblName
+  mov edx, lblNameLen
   int 80h
   mov eax, 4
   mov ebx, 1
-  mov ecx, prdNo3Id
-  mov edx, 32
-  int 80h
-  mov eax, 4
-  mov ebx, 1
-  mov ecx, lblProductName
-  mov edx, lblProductNameLen
-  int 80h
-  mov eax, 4
-  mov ebx, 1
-  mov ecx, prdNo3ProductName
+  mov ecx, prdNo3Name
   mov edx, 32
   int 80h
   mov eax, 4
@@ -1024,22 +891,12 @@ _start:
   int 80h
   mov eax, 4
   mov ebx, 1
-  mov ecx, lblId
-  mov edx, lblIdLen
+  mov ecx, lblName
+  mov edx, lblNameLen
   int 80h
   mov eax, 4
   mov ebx, 1
-  mov ecx, prdNo4Id
-  mov edx, 32
-  int 80h
-  mov eax, 4
-  mov ebx, 1
-  mov ecx, lblProductName
-  mov edx, lblProductNameLen
-  int 80h
-  mov eax, 4
-  mov ebx, 1
-  mov ecx, prdNo4ProductName
+  mov ecx, prdNo4Name
   mov edx, 32
   int 80h
   mov eax, 4
@@ -1091,22 +948,12 @@ _start:
   int 80h
   mov eax, 4
   mov ebx, 1
-  mov ecx, lblId
-  mov edx, lblIdLen
+  mov ecx, lblName
+  mov edx, lblNameLen
   int 80h
   mov eax, 4
   mov ebx, 1
-  mov ecx, prdNo5Id
-  mov edx, 32
-  int 80h
-  mov eax, 4
-  mov ebx, 1
-  mov ecx, lblProductName
-  mov edx, lblProductNameLen
-  int 80h
-  mov eax, 4
-  mov ebx, 1
-  mov ecx, prdNo5ProductName
+  mov ecx, prdNo5Name
   mov edx, 32
   int 80h
   mov eax, 4
@@ -1158,22 +1005,12 @@ _start:
   int 80h
   mov eax, 4
   mov ebx, 1
-  mov ecx, lblId
-  mov edx, lblIdLen
+  mov ecx, lblName
+  mov edx, lblNameLen
   int 80h
   mov eax, 4
   mov ebx, 1
-  mov ecx, prdNo6Id
-  mov edx, 32
-  int 80h
-  mov eax, 4
-  mov ebx, 1
-  mov ecx, lblProductName
-  mov edx, lblProductNameLen
-  int 80h
-  mov eax, 4
-  mov ebx, 1
-  mov ecx, prdNo6ProductName
+  mov ecx, prdNo6Name
   mov edx, 32
   int 80h
   mov eax, 4
@@ -1225,22 +1062,12 @@ _start:
   int 80h
   mov eax, 4
   mov ebx, 1
-  mov ecx, lblId
-  mov edx, lblIdLen
+  mov ecx, lblName
+  mov edx, lblNameLen
   int 80h
   mov eax, 4
   mov ebx, 1
-  mov ecx, prdNo7Id
-  mov edx, 32
-  int 80h
-  mov eax, 4
-  mov ebx, 1
-  mov ecx, lblProductName
-  mov edx, lblProductNameLen
-  int 80h
-  mov eax, 4
-  mov ebx, 1
-  mov ecx, prdNo7ProductName
+  mov ecx, prdNo7Name
   mov edx, 32
   int 80h
   mov eax, 4
@@ -1292,22 +1119,12 @@ _start:
   int 80h
   mov eax, 4
   mov ebx, 1
-  mov ecx, lblId
-  mov edx, lblIdLen
+  mov ecx, lblName
+  mov edx, lblNameLen
   int 80h
   mov eax, 4
   mov ebx, 1
-  mov ecx, prdNo8Id
-  mov edx, 32
-  int 80h
-  mov eax, 4
-  mov ebx, 1
-  mov ecx, lblProductName
-  mov edx, lblProductNameLen
-  int 80h
-  mov eax, 4
-  mov ebx, 1
-  mov ecx, prdNo8ProductName
+  mov ecx, prdNo8Name
   mov edx, 32
   int 80h
   mov eax, 4
@@ -1359,22 +1176,12 @@ _start:
   int 80h
   mov eax, 4
   mov ebx, 1
-  mov ecx, lblId
-  mov edx, lblIdLen
+  mov ecx, lblName
+  mov edx, lblNameLen
   int 80h
   mov eax, 4
   mov ebx, 1
-  mov ecx, prdNo9Id
-  mov edx, 32
-  int 80h
-  mov eax, 4
-  mov ebx, 1
-  mov ecx, lblProductName
-  mov edx, lblProductNameLen
-  int 80h
-  mov eax, 4
-  mov ebx, 1
-  mov ecx, prdNo9ProductName
+  mov ecx, prdNo9Name
   mov edx, 32
   int 80h
   mov eax, 4
@@ -1426,22 +1233,12 @@ _start:
   int 80h
   mov eax, 4
   mov ebx, 1
-  mov ecx, lblId
-  mov edx, lblIdLen
+  mov ecx, lblName
+  mov edx, lblNameLen
   int 80h
   mov eax, 4
   mov ebx, 1
-  mov ecx, prdNo10Id
-  mov edx, 32
-  int 80h
-  mov eax, 4
-  mov ebx, 1
-  mov ecx, lblProductName
-  mov edx, lblProductNameLen
-  int 80h
-  mov eax, 4
-  mov ebx, 1
-  mov ecx, prdNo10ProductName
+  mov ecx, prdNo10Name
   mov edx, 32
   int 80h
   mov eax, 4
@@ -1485,8 +1282,12 @@ _start:
   mov edx, 32
   int 80h
 
-
   ; DISPLAY FOOTER
+  mov eax, 4
+  mov ebx, 1
+  mov ecx, endingMessage
+  mov edx, endingMessageLen
+  int 80h
   mov eax, 4
   mov ebx, 1
   mov ecx, lblProgrammerName
@@ -1511,4 +1312,3 @@ _start:
   mov eax, 1
   mov ebx, 0
   int 80h
-

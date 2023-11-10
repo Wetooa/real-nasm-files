@@ -15,11 +15,8 @@ _start:
   mov edx, 16
   int 80h
 
-  xor eax, eax
   lea esi, [input]
   call getLen
-
-  mov edx, eax
   mov eax, 4
   mov ebx, 1
   mov ecx, input
@@ -31,14 +28,17 @@ _start:
 
 
 getLen:
-  movzx edx, byte [esi]
-  cmp edx, 0xA
-  je return 
+  xor edx, edx
 
-  inc esi
-  inc eax
+  getLenLoop:
+    movzx eax, byte [esi]
+    cmp eax, 0xA
+    je return 
 
-  jmp getLen
+    inc esi
+    inc edx
+
+    jmp getLenLoop
 
 return:
   ret 
