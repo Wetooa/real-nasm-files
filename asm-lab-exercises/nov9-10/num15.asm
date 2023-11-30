@@ -43,16 +43,16 @@ _start:
   movzx edx, byte [esi]
 
   cmp edx, 0x31 
-  je runAddition
+  je runBalanceInquiry
 
   cmp edx, 0x32
-  je runSubtraction
+  je runWithdrawal
 
   cmp edx, 0x33 
-  je runMultiplication
+  je runDeposit
 
   cmp edx, 0x34 
-  je runDivision
+  je runBillsPayment
 
   cmp edx, 0x35 
   je runExit
@@ -64,7 +64,7 @@ _start:
   mov ebx, 0
   int 80h
 
-runAddition:
+runBalanceInquiry:
   mov eax, 4
   mov ebx, 1
   mov ecx, additionLine
@@ -72,7 +72,7 @@ runAddition:
   int 80h
   jmp again
 
-runSubtraction:
+runWithdrawal:
   mov eax, 4
   mov ebx, 1
   mov ecx, subtractionLine
@@ -80,7 +80,7 @@ runSubtraction:
   int 80h
   jmp again
 
-runMultiplication:
+runDeposit:
   mov eax, 4
   mov ebx, 1
   mov ecx, multiplicationLine
@@ -88,7 +88,7 @@ runMultiplication:
   int 80h
   jmp again
 
-runDivision:
+runBillsPayment:
   mov eax, 4
   mov ebx, 1
   mov ecx, divisionLine
