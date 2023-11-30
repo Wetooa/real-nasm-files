@@ -133,17 +133,6 @@ runAddition:
   sub edx, ecx
   int 0x80
 
-  ; mov eax, dword [isNegative]
-  ; lea ecx, [buffer + 15]
-  ; call toStr
-  ; mov eax, 4
-  ; mov ebx, 1
-  ; mov edx, buffer
-  ; add edx, 16
-  ; sub edx, ecx
-  ; int 0x80
-
-
   jmp again
 
 runSubtraction:
