@@ -302,7 +302,6 @@ toInt:
   jmp return
 
 toStr:
-
   mov ebx, 0
   mov dword [isNegative], ebx
   cmp eax, 0
